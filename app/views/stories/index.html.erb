@@ -1,0 +1,9 @@
+<h1> Hi </h1>
+
+<% if @stories.any? %>
+  <% @stories.each do |story| %>
+    <%= story.name %>
+  <% end %>
+<% else %>
+  <p>There are no stories yet! :( </p>
+<% end %>
