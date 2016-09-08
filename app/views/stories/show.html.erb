@@ -1,6 +1,15 @@
-<%= @story.name %>
+<h1><%= @story.name %></h1>
 <!-- image goes here -->
-<!-- add contribution -->
+<br>
+<% if @story.contributions.any? %>
+  <% @story.contributions.each do |contribution| %>
+    <%= contribution.sentence %>
+  <% end %>
+<% else %>
+  <p>This story has no contributions yet! You should be the one to start the tale!</p>
+<% end %>
+
+<p><%= link_to "Contribute to this story", new_story_contribution_path(@story) %></p>
 <p><%= link_to "Return to stories", stories_path %></p>
 <p><%= link_to "Edit Story", edit_story_path(@story) %></p>
 <p><%= link_to "Delete Story", story_path(@story),
