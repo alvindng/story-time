@@ -2,7 +2,7 @@ class ContributionsController < ApplicationController
   def new
     @story = Story.find(params[:story_id])
     @contribution = @story.contributions.new
-    @num = rand(4)
+    @num = rand(5)
     @img_url = "story_images/#@num.jpg"
   end
 
