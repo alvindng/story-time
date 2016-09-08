@@ -3,7 +3,7 @@
 <br>
 <% if @story.contributions.any? %>
   <% @story.contributions.each do |contribution| %>
-    <%= contribution.sentence %>
+    <%= link_to contribution.sentence, story_contribution_path(@story, contribution) %>
   <% end %>
 <% else %>
   <p>This story has no contributions yet! You should be the one to start the tale!</p>

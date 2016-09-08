@@ -1,0 +1,7 @@
+<%= @contribution.sentence %>
+
+<p><%= link_to "Return to stories", stories_path %></p>
+<p><%= link_to "Edit Story", edit_story_contribution_path(@story, @contribution) %></p>
+<p><%= link_to "Delete Story", story_contribution_path(@story, @contribution),
+                              :data => {:confirm => "You Sure?",
+                                        :method => "delete"}%></p>
