@@ -1,7 +1,10 @@
-<%= @contribution.sentence %>
+<h3><%= @contribution.sentence %></h3>
+<%= image_tag @contribution.image %>
+<h5><em>by: <%= @contribution.user %></em></h5>
 
-<p><%= link_to "Return to stories", stories_path %></p>
-<p><%= link_to "Edit Story", edit_story_contribution_path(@story, @contribution) %></p>
-<p><%= link_to "Delete Story", story_contribution_path(@story, @contribution),
+<p><%= link_to "Edit Sentence", edit_story_contribution_path(@story, @contribution) %></p>
+<p><%= link_to "Delete Contribution", story_contribution_path(@story, @contribution),
                               :data => {:confirm => "You Sure?",
                                         :method => "delete"}%></p>
+
+<p><%= link_to "Return to story", story_path(@story) %></p>

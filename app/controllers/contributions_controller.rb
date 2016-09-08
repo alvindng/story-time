@@ -2,11 +2,15 @@ class ContributionsController < ApplicationController
   def new
     @story = Story.find(params[:story_id])
     @contribution = @story.contributions.new
+    @num = rand(4)
+    @img_url = "story_images/#@num.jpg"
   end
 
   def create
     @story = Story.find(params[:story_id])
     @contribution = @story.contributions.new(contribution_params)
+    @img_url = "story_images/#@num.jpg"
+
     if @contribution.save
       redirect_to story_path(@contribution.story)
     else
@@ -43,6 +47,6 @@ class ContributionsController < ApplicationController
 
 private
   def contribution_params
-    params.require(:contribution).permit(:sentence, :user)
+    params.require(:contribution).permit(:image, :sentence, :user)
   end
 end
