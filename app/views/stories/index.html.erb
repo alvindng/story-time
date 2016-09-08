@@ -1,9 +1,13 @@
-<h1> Hi </h1>
+<h1>Story Time</h1>
 
 <% if @stories.any? %>
   <% @stories.each do |story| %>
-    <%= story.name %>
+    <%= link_to story.name, story_path(story) %>
   <% end %>
 <% else %>
-  <p>There are no stories yet! :( </p>
+  <p>There are no stories yet! :(</p>
 <% end %>
+
+<hr>
+
+<%= link_to "New Story", new_story_path %>
