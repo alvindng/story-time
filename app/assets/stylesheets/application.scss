@@ -17,12 +17,30 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-.sentences {
+body {
+  background-image: url("./lined_paper.jpg");
+  font-family: 'Permanent Marker', cursive;
+  font-size: 25px;
+}
+
+.sentences, .stories {
   a {
     color: black;
   }
+  a:hover {
+    color: blue;
+    text-decoration: none;
+  }
 }
 
+.jumbotron {
+  background-color: lightblue;
+  text-align: center;
+}
+
+img {
+  max-width: 30%;
+}
 .notice {
   text-align: center;
   background-color: green;

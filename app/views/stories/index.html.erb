@@ -1,8 +1,10 @@
-<h1>Story Time</h1>
+<div class="jumbotron">
+  <h1>Story Time</h1>
+</div>
 
 <% if @stories.any? %>
   <% @stories.each do |story| %>
-  <h3><%= link_to story.name, story_path(story) %></h3>  
+  <h2 class="stories"><%= link_to story.name, story_path(story) %></h2>
   <% end %>
 <% else %>
   <p>There are no stories yet! :(</p>

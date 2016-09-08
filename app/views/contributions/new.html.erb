@@ -1,6 +1,7 @@
 <h1>New contribution for <%= @story.name %></h1>
 
 <%= image_tag @img_url %>
-
-<%= render 'form' %>
+<br>
 <%= link_to "Refresh Image", new_story_contribution_path(@story) %>
+<hr>
+<%= render 'form' %>

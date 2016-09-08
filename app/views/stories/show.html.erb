@@ -2,11 +2,11 @@
 
 <br>
 <% if @story.contributions.any? %>
-<div class="sentences">
-  <% @story.contributions.each do |contribution| %>
+  <div class="sentences">
+    <% @story.contributions.each do |contribution| %>
       <%= link_to contribution.sentence, story_contribution_path(@story, contribution) %>
-  <% end %>
-</div>
+    <% end %>
+  </div>
 <% else %>
   <p>This story has no contributions yet! You should be the one to start the tale!</p>
 <% end %>
