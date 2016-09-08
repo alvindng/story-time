@@ -14,6 +14,7 @@ class StoriesController < ApplicationController
   def create
     @story = Story.new(story_params)
     if @story.save
+      flash[:notice] = "Story successfully added!"
       redirect_to stories_path
     else
       render :new
@@ -36,6 +37,7 @@ class StoriesController < ApplicationController
   def destroy
     @story = Story.find(params[:id])
     @story.destroy
+    flash[:alert] = "Story Deleted Successfully!"
     redirect_to stories_path
   end
 

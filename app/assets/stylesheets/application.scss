@@ -16,3 +16,21 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.sentences {
+  a {
+    color: black;
+  }
+}
+
+.notice {
+  text-align: center;
+  background-color: green;
+  color: white;
+}
+
+.warning {
+  text-align: center;
+  background-color: red;
+  color: white;
+}

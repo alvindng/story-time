@@ -10,7 +10,7 @@ class ContributionsController < ApplicationController
     @story = Story.find(params[:story_id])
     @contribution = @story.contributions.new(contribution_params)
     @img_url = "story_images/#@num.jpg"
-
+    flash[:notice] = "Sentence successfully added!"
     if @contribution.save
       redirect_to story_path(@contribution.story)
     else
@@ -44,6 +44,7 @@ class ContributionsController < ApplicationController
     @story = Story.find(params[:story_id])
     @contribution = Contribution.find(params[:id])
     @contribution.destroy
+    flash[:alert] = "Sentence Deleted Successfully!"
     redirect_to story_path(@story)
   end
 

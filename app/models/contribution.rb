@@ -5,4 +5,6 @@ class Contribution < ActiveRecord::Base
   validates :sentence, :presence => true
   validates :sentence, length: { minimum: 1, maximum: 120 }
   validates :user, :presence => true
+
+
 end
