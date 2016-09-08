@@ -2,7 +2,7 @@
 
 <% if @stories.any? %>
   <% @stories.each do |story| %>
-    <%= link_to story.name, story_path(story) %>
+  <h3><%= link_to story.name, story_path(story) %></h3>  
   <% end %>
 <% else %>
   <p>There are no stories yet! :(</p>

@@ -1,5 +1,5 @@
 class Story < ActiveRecord::Base
   has_many :contributions
-  has_one :image
+  default_scope { order ("name ASC")}
   validates :name, :presence => true
 end

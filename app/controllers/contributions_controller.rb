@@ -26,11 +26,13 @@ class ContributionsController < ApplicationController
   def edit
     @story = Story.find(params[:story_id])
     @contribution = Contribution.find(params[:id])
+    @img_url = @contribution.image
   end
 
   def update
     @story = Story.find(params[:story_id])
     @contribution = Contribution.find(params[:id])
+    @img_url = @contribution.image
     if @contribution.update(contribution_params)
       redirect_to story_contribution_path(@story, @contribution)
     else
